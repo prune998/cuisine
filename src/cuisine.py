@@ -600,11 +600,11 @@ def repository_ensure_yum(repository):
     pass
 
 def package_upgrade_yum():
-    sudo("yum --assumeyes update")
+    sudo("yum -y update")
 
 def package_update_yum(package=None):
     if package == None:
-        sudo("yum --assumeyes update")
+        sudo("yum -y update")
     else:
         if type(package) in (list, tuple):
             package = " ".join(package)
